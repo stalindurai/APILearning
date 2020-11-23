@@ -1,6 +1,10 @@
 Feature: Create Product
+
+  Background:
+#    Given env is set
+
   Scenario Outline: Create a Sample Product
-    Given env is set
+
     When POST request is made "<json>"
     Then product is created
     Then status code is 200

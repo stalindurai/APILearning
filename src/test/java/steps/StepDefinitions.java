@@ -21,9 +21,9 @@ public class StepDefinitions {
     File jsFile;
 
     Response response;
-    String exp="PROD-47X48787S8337671J", actual, resp;
+    String exp="PROD-", actual, resp;
 
-    public String token = "A21AAKOgz9ulm6vMDpMjk-obiEGkU8MYYUkIdQuWhhdriEgC_9yQSBOLqO3FYQ4xhIgPh8tQsW0aKnYnQas1aTkTXOhYGQV-Q";
+    public String token = "A21AAIFtR-un3mSmNjqXD4dhUG6vetksD5o8ZtbVw2yckCZFTl95stShZv_rYiaCF-_PBat6SzY-kOCEYqsf3K0jkWGQ9-7yg";
 
     @Given("env is set")
     public void setEnv(){
@@ -54,7 +54,7 @@ public class StepDefinitions {
         resp = response.asString();
         JsonPath js = new JsonPath(resp);
         actual = js.get("id");
-        Assert.assertTrue(exp.equals(actual));
+        Assert.assertTrue(actual.contains(exp));
     }
 
     @Then("status code is 200")
